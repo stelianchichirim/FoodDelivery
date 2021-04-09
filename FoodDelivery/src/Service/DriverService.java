@@ -51,4 +51,12 @@ public class DriverService extends PersonService{
     public void showPeople() {
         for (Person driver : drivers) driver.printInfo();
     }
+
+    public List<DriverPerson> getDrivers() {
+        return drivers;
+    }
+
+    public void setDrivers(List<DriverPerson> drivers) {
+        this.drivers = drivers;
+    }
 }

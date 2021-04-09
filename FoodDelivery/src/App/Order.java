@@ -42,4 +42,44 @@ public class Order implements Comparable<Order> {
     public int compareTo(Order ob) {
         return Double.compare(this.price, ob.price);
     }
+
+    public UserPerson getUser() {
+        return user;
+    }
+
+    public void setUser(UserPerson user) {
+        this.user = user;
+    }
+
+    public DriverPerson getDriver() {
+        return driver;
+    }
+
+    public void setDriver(DriverPerson driver) {
+        this.driver = driver;
+    }
+
+    public Food[] getOrderContent() {
+        return orderContent;
+    }
+
+    public void setOrderContent(Food[] orderContent) {
+        this.orderContent = orderContent;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

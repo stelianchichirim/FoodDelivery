@@ -53,4 +53,12 @@ public class LunchService extends FoodService {
     public void showFood() {
         for (Food food : lunch) food.printInfo();
     }
+
+    public List<LunchFood> getLunch() {
+        return lunch;
+    }
+
+    public void setLunch(List<LunchFood> lunch) {
+        this.lunch = lunch;
+    }
 }

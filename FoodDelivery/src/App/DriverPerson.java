@@ -35,4 +35,12 @@ public class DriverPerson extends Person{
     public String getType() {
         return "DriverPerson";
     }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 }

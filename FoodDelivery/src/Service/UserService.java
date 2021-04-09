@@ -51,4 +51,12 @@ public class UserService extends PersonService {
     public void showPeople() {
         for (Person user : users) user.printInfo();
     }
+
+    public List<UserPerson> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<UserPerson> users) {
+        this.users = users;
+    }
 }

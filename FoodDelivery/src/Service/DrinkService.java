@@ -55,4 +55,11 @@ public class DrinkService extends FoodService {
         for (Food food : drinks) food.printInfo();
     }
 
+    public List<DrinkFood> getDrinks() {
+        return drinks;
+    }
+
+    public void setDrinks(List<DrinkFood> drinks) {
+        this.drinks = drinks;
+    }
 }

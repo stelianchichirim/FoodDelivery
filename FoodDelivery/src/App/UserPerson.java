@@ -45,11 +45,23 @@ public class UserPerson extends Person{
         return "UserPerson";
     }
 
+    public void increaseOrders() {
+        nrOrders++;
+    }
+
     public int getDiscountProcent() {
         return discountProcent;
     }
 
-    public void increaseOrders() {
-        nrOrders++;
+    public void setDiscountProcent(int discountProcent) {
+        this.discountProcent = discountProcent;
+    }
+
+    public int getNrOrders() {
+        return nrOrders;
+    }
+
+    public void setNrOrders(int nrOrders) {
+        this.nrOrders = nrOrders;
     }
 }

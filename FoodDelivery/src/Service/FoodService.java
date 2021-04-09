@@ -30,7 +30,7 @@ public abstract class FoodService {
         for (FoodService service : getServiceInstances()) service.showFood();
     }
 
-    // Get the instances for all class services that use csv File as a database
+    // Get the instances for all Food class services that use csv File as a database
     public static ArrayList<FoodService> getServiceInstances() {
         ArrayList<FoodService> serviceInstances = new ArrayList<>();
 

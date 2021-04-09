@@ -28,7 +28,7 @@ public abstract class PersonService {
         for (PersonService service : getServiceInstances()) service.showPeople();
     }
 
-    // Get the instances for all class services that use csv File as a database
+    // Get the instances for all Person class services that use csv File as a database
     public static ArrayList<PersonService> getServiceInstances() {
         ArrayList<PersonService> serviceInstances = new ArrayList<>();
 

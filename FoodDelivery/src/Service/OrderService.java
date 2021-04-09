@@ -39,4 +39,11 @@ public class OrderService {
         if (!orders.isEmpty()) orders.last().printInfo();
     }
 
+    public TreeSet<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(TreeSet<Order> orders) {
+        this.orders = orders;
+    }
 }
