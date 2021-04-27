@@ -22,6 +22,10 @@ public class MyIO {
         return scanner.nextLine();
     }
 
+    public String[] readCommands() {
+        return scanner.nextLine().split(" ");
+    }
+
     public String readString() {
         return scanner.next();
     }
@@ -32,6 +36,14 @@ public class MyIO {
 
     public static void separator() {
         System.out.println("\n========================\n");
+    }
+
+    public static void wrongCommand() {
+        System.out.println("Wrong command!\n");
+    }
+
+    public static void succesCommand() {
+        System.out.println("The command was successful!\n");
     }
 
 }

@@ -75,6 +75,12 @@ public class MyDataBase {
                 classService.create(entry);
             }
         }
+
+        // load csv data for logger
+        List<String[]> csvData = readCsvFile(MyLogger.getInstance().csvFilePath());
+        for (String[] entry : csvData) {
+            MyLogger.getInstance().create(entry);
+        }
     }
 
     public void loadDataInCsv() {
@@ -88,6 +94,9 @@ public class MyDataBase {
         for (FoodService classService : FoodService.getServiceInstances()) {
             writeCsvFile(classService.csvFilePath(), classService.parseData());
         }
+
+        // load csv data for logger
+        writeCsvFile(MyLogger.getInstance().csvFilePath(), MyLogger.getInstance().parseData());
     }
 
 }

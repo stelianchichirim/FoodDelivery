@@ -5,6 +5,7 @@ import App.Food;
 import App.Order;
 import App.UserPerson;
 import MyUtils.MyIO;
+import MyUtils.MyLogger;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -29,14 +30,20 @@ public class OrderService {
         orders.add(new Order(user, driver, orderContent, address));
     }
 
+    public void newEntry() { }
+
     public void printOrders() {
         for (Order order : orders.descendingSet())
-            order.printInfo();
+            if (order != null) order.printInfo();
         MyIO.separator();
+
+        MyLogger.getInstance().addLog("Show Order entries");
     }
 
     public void printMostExpensiveOrder() {
         if (!orders.isEmpty()) orders.last().printInfo();
+
+        MyLogger.getInstance().addLog("Show Most Expensive Order entry");
     }
 
     public TreeSet<Order> getOrders() {

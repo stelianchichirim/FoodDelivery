@@ -19,6 +19,15 @@ public abstract class FoodService {
     // Create a new entry of the class, using stdin information
     public abstract void newEntry();
 
+    // Update an entry using data
+    public abstract void update(int id, String[] data);
+
+    // Edit an existing entry
+    public abstract void edit(int id);
+
+    // Delete an existing entry
+    public abstract void delete(int id);
+
     // Get the entry from position id
     public abstract Food getEntry(int id);
 
