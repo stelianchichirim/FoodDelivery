@@ -19,9 +19,4 @@ public abstract class Person {
     // Put all the fields in a list
     public abstract String[] parseToList();
 
-    // Edit the fields of the Person
-    public abstract void edit();
-
-    // Get the Person type
-    public abstract String getType();
 }

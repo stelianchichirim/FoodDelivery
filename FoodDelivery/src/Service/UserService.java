@@ -27,6 +27,11 @@ public class UserService extends PersonService {
     }
 
     @Override
+    public String tableName() {
+        return "userperson";
+    }
+
+    @Override
     public List<String[]> parseData() {
         List<String[]> data = new ArrayList<>();
         for (Person user : users)

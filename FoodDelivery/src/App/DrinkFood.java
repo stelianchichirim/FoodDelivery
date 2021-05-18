@@ -2,8 +2,6 @@ package App;
 
 import MyUtils.MyIO;
 
-import java.util.ArrayList;
-
 public class DrinkFood extends Food {
 
     private int capacity;
@@ -23,16 +21,6 @@ public class DrinkFood extends Food {
     @Override
     public String[] parseToList() {
         return new String[] {name, Integer.toString(price), Integer.toString(capacity)};
-    }
-
-    @Override
-    public void edit() {
-
-    }
-
-    @Override
-    public String getType() {
-        return null;
     }
 
     public int getCapacity() {

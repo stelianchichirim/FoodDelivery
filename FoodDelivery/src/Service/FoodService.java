@@ -7,8 +7,11 @@ import java.util.List;
 
 public abstract class FoodService {
 
-    // Get the csv File Path for the this object type
+    // Get the csv File Path for the object type
     public abstract String csvFilePath();
+
+    // Get the name of the table from mySql for the object type
+    public abstract String tableName();
 
     // Parse the data to write it in csv
     public abstract List<String[]> parseData();

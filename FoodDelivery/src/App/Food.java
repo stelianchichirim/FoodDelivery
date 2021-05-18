@@ -18,10 +18,4 @@ public abstract class Food {
     // Put all the fields in a list
     public abstract String[] parseToList();
 
-    // Edit the fields of the Food
-    public abstract void edit();
-
-    // Get the Food type
-    public abstract String getType();
-
 }

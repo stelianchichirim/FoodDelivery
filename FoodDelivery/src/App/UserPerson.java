@@ -2,9 +2,6 @@ package App;
 
 import MyUtils.MyIO;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class UserPerson extends Person{
 
     private int discountProcent;
@@ -33,16 +30,6 @@ public class UserPerson extends Person{
     @Override
     public String[] parseToList() {
         return new String[] {firstName, lastName, Integer.toString(discountProcent), Integer.toString(nrOrders)};
-    }
-
-    @Override
-    public void edit() {
-
-    }
-
-    @Override
-    public String getType() {
-        return "UserPerson";
     }
 
     public void increaseOrders() {

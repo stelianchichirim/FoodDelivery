@@ -48,6 +48,10 @@ public class MyLogger {
         return "csvFiles/logger.csv";
     }
 
+    public String tableName() {
+        return "logger";
+    }
+
     public List<String[]> parseData() {
         List<String[]> data = new ArrayList<>();
         for (Logg log : logs) data.add(log.parseToList());

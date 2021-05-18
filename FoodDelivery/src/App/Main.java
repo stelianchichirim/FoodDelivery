@@ -1,12 +1,12 @@
 package App;
 
-import MyUtils.MyDataBase;
+import MyUtils.MyCsvDataBase;
 import MyUtils.MyIO;
 import MyUtils.MyLogger;
+import MyUtils.MySqlDataBase;
 import Service.*;
 
-import java.net.SocketOption;
-import java.sql.SQLOutput;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -17,7 +17,36 @@ public class Main {
 
 
     public static void main(String[] args) {
-        MyDataBase.getInstance().loadDataFromCsv();
+//        MyCsvDataBase.getInstance().loadDataFromCsv();
+        MySqlDataBase.getInstance().loadDataFromJDBC();
+
+        // for testing, we need to have at least one object of each class to work
+        try {
+            OrderService.getInstance().addEntry(
+                    UserService.getInstance().getEntry(0),
+                    DriverService.getInstance().getEntry(0),
+                    new ArrayList<Food>() {{
+                        add(LunchService.getInstance().getEntry(0));
+                        add(DrinkService.getInstance().getEntry(0));}},
+                    "Poporului 10");
+            OrderService.getInstance().addEntry(
+                    UserService.getInstance().getEntry(0),
+                    DriverService.getInstance().getEntry(0),
+                    new ArrayList<Food>() {{
+                        add(DinnerService.getInstance().getEntry(0));
+                        add(BreakfastService.getInstance().getEntry(0));}},
+                    "Poporului 11");
+            OrderService.getInstance().addEntry(
+                    UserService.getInstance().getEntry(0),
+                    DriverService.getInstance().getEntry(0),
+                    new ArrayList<Food>() {{
+                        add(DinnerService.getInstance().getEntry(0));
+                        add(DrinkService.getInstance().getEntry(0));}},
+                    "Poporului 12");
+        }
+        catch (Exception e) {
+            System.out.println("We need to have at least one object of each class to work the order test");
+        }
 
 //        BreakfastService.getInstance().showFood();
 //        BreakfastService.getInstance().create(new String[]{"Oua ochiuri", "25", "500", "True", "foarte bune!"});
@@ -28,28 +57,6 @@ public class Main {
 //        DriverService.getInstance().create(new String[]{"Alex", "Constantin", "3000"});
 //        FoodService.showAllFood();
 //        UserService.showAllPeople();
-
-        // for testing, we need to have at least one object of each class to work
-        try {
-            OrderService.getInstance().addEntry(
-                    UserService.getInstance().getEntry(0),
-                    DriverService.getInstance().getEntry(0),
-                    new Food[]{LunchService.getInstance().getEntry(0), DrinkService.getInstance().getEntry(0)},
-                    "Poporului 10");
-            OrderService.getInstance().addEntry(
-                    UserService.getInstance().getEntry(0),
-                    DriverService.getInstance().getEntry(0),
-                    new Food[]{DinnerService.getInstance().getEntry(0), BreakfastService.getInstance().getEntry(0)},
-                    "Poporului 11");
-            OrderService.getInstance().addEntry(
-                    UserService.getInstance().getEntry(0),
-                    DriverService.getInstance().getEntry(0),
-                    new Food[]{DinnerService.getInstance().getEntry(0), DrinkService.getInstance().getEntry(0)},
-                    "Poporului 12");
-        }
-        catch (Exception e) {
-            System.out.println("We need to have at least one object of each class to work the order test");
-        }
 
 //        OrderService.getInstance().printOrders();
 //        OrderService.getInstance().printMostExpensiveOrder();
@@ -107,7 +114,7 @@ public class Main {
             if (commands[0].equals("create")) {
                 if (foodInstance != null) foodInstance.newEntry();
                 else if (personInstance != null) personInstance.newEntry();
-                //else if (orderInstance != null) orderInstance.newEntry();
+                else if (orderInstance != null) orderInstance.newEntry();
                 else MyIO.wrongCommand();
                 continue;
             }
@@ -164,6 +171,7 @@ public class Main {
             MyIO.wrongCommand();
         }
 
-        MyDataBase.getInstance().loadDataInCsv();
+//        MyCsvDataBase.getInstance().loadDataInCsv();
+        MySqlDataBase.getInstance().loadDataInJDBC();
     }
 }

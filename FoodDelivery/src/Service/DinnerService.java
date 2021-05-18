@@ -29,6 +29,11 @@ public class DinnerService extends FoodService {
     }
 
     @Override
+    public String tableName() {
+        return "dinnerfood";
+    }
+
+    @Override
     public List<String[]> parseData() {
         List<String[]> data = new ArrayList<>();
         for (Food food : dinner)

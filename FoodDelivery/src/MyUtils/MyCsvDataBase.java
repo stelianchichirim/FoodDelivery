@@ -8,17 +8,17 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyDataBase {
+public class MyCsvDataBase {
 
     private BufferedReader csvReader;
     private FileWriter csvWriter;
 
-    private static MyDataBase instance = null;
+    private static MyCsvDataBase instance = null;
 
-    private MyDataBase() { }
+    private MyCsvDataBase() { }
 
-    public static MyDataBase getInstance() {
-        if (instance == null) instance = new MyDataBase();
+    public static MyCsvDataBase getInstance() {
+        if (instance == null) instance = new MyCsvDataBase();
         return instance;
     }
 

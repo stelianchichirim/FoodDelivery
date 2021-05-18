@@ -3,15 +3,17 @@ package App;
 
 import MyUtils.MyIO;
 
+import java.util.List;
+
 public class Order implements Comparable<Order> {
 
     private UserPerson user;        // user-ul care a plasat comanda
     private DriverPerson driver;    // persoana care livreaza comanda
-    private Food[] orderContent;    // continutul comenzii
+    private List<Food> orderContent;    // continutul comenzii
     private String address;         // adresa unde trebuie livrata comanda
     private double price;              // pretul comenzii
 
-    public Order(UserPerson _user, DriverPerson _driver, Food[] _orderContent, String _address) {
+    public Order(UserPerson _user, DriverPerson _driver, List<Food> _orderContent, String _address) {
         user = _user;
         driver = _driver;
         orderContent = _orderContent;
@@ -59,11 +61,11 @@ public class Order implements Comparable<Order> {
         this.driver = driver;
     }
 
-    public Food[] getOrderContent() {
+    public List<Food> getOrderContent() {
         return orderContent;
     }
 
-    public void setOrderContent(Food[] orderContent) {
+    public void setOrderContent(List<Food>  orderContent) {
         this.orderContent = orderContent;
     }
 

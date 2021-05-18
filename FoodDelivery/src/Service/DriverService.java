@@ -27,6 +27,11 @@ public class DriverService extends PersonService{
     }
 
     @Override
+    public String tableName() {
+        return "driverperson";
+    }
+
+    @Override
     public List<String[]> parseData() {
         List<String[]> data = new ArrayList<>();
         for (Person driver : drivers)

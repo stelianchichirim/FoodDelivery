@@ -2,9 +2,6 @@ package App;
 
 import MyUtils.MyIO;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class DriverPerson extends Person{
 
     private int salary;
@@ -24,16 +21,6 @@ public class DriverPerson extends Person{
     @Override
     public String[] parseToList() {
         return new String[] {firstName, lastName, Integer.toString(salary)};
-    }
-
-    @Override
-    public void edit() {
-
-    }
-
-    @Override
-    public String getType() {
-        return "DriverPerson";
     }
 
     public int getSalary() {
